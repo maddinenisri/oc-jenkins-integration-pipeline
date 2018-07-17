@@ -11,4 +11,6 @@ node("maven") {
   
   sh "mvn -version"
   sh "mvn clean verify"
+  
+  sh "find . -name *.jar"
 }
