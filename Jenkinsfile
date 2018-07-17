@@ -13,4 +13,6 @@ node("maven") {
   sh "mvn clean verify"
   
   sh "find . -name *.jar"
+  
+  echo "Completed"
 }
