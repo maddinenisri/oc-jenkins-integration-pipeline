@@ -1,3 +1,4 @@
+properties([[$class: 'GithubProjectProperty', displayName: '', projectUrlStr: 'https://github.com/maddinenisri/oc-jenkins-integration-pipeline/'], pipelineTriggers([githubPush()])])
 node("maven") {
   echo "Pipeline Test"
   checkout scm
