@@ -2,13 +2,14 @@ properties([[$class: 'GithubProjectProperty', displayName: '', projectUrlStr: 'h
 node("maven") {
   echo "Pipeline Test"
   checkout scm
-  checkout(
-    [$class: 'GitSCM', 
-     branches: [[name: '*/master']], 
-     doGenerateSubmoduleConfigurations: false, 
-     extensions: [], 
-     submoduleCfg: [], 
-     userRemoteConfigs: [[url: 'https://github.com/maddinenisri/simple-rest.git']]])
+  git url: 'https://github.com/maddinenisri/simple-rest.git', branch: 'master'
+  //checkout(
+  //  [$class: 'GitSCM', 
+  //   branches: [[name: '*/master']], 
+  //   doGenerateSubmoduleConfigurations: false, 
+  //   extensions: [], 
+  //   submoduleCfg: [], 
+  //   userRemoteConfigs: [[url: 'https://github.com/maddinenisri/simple-rest.git']]])
   
   sh "mvn -version"
   sh "mvn clean verify"
