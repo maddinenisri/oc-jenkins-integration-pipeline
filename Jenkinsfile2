@@ -1,0 +1,9 @@
+properties([[$class: 'GithubProjectProperty', displayName: '', projectUrlStr: 'https://github.com/maddinenisri/oc-jenkins-integration-pipeline/'], pipelineTriggers([githubPush()])])
+node {
+  stage("checkout") {
+    echo "Pipeline Test"
+    checkout scm
+    git url: 'https://github.com/maddinenisri/simple-rest.git', branch: 'master'
+    echo "Checkout Completed"
+  }
+}
