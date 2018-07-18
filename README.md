@@ -24,3 +24,6 @@ properties([pipelineTriggers([githubPush()])])
 node {
     git url: 'https://github.com/maddinenisri/oc-jenkins-integration-pipeline.git', branch: 'master'
 }
+
+
+Testing..
