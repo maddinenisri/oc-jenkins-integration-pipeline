@@ -17,3 +17,10 @@ jnlp
 docker.io/openshift/jenkins-agent-maven-35-centos7:v3.11
 /tmp
 ${computer.jnlpmac} ${computer.name}
+
+
+properties([pipelineTriggers([githubPush()])])
+
+node {
+    git url: 'https://github.com/maddinenisri/oc-jenkins-integration-pipeline.git', branch: 'master'
+}
